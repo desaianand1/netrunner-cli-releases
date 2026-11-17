@@ -1,0 +1,62 @@
+name: Bug report
+description: Something in netrunner did not work
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing netrunner. For a security problem, use Security > Report a vulnerability instead.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: The command you ran and what it printed.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Run `netrunner ...`
+        2. ...
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Doctor report
+      description: Run `netrunner doctor --json | Set-Clipboard` and paste it here. It hides your API keys and user folder.
+      render: json
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      description: Run `winver`.
+      placeholder: Windows 11 24H2
+    validations:
+      required: true
+  - type: input
+    id: mo2
+    attributes:
+      label: MO2 version
+      description: Shown in MO2's title bar.
+      placeholder: "2.5.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: store
+    attributes:
+      label: Game store
+      options:
+        - Steam
+        - GOG
+        - Epic
+    validations:
+      required: true
